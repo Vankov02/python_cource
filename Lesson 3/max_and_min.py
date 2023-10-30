@@ -1,13 +1,10 @@
 number_1 = int(input("Введите первое число: "))
 number_2 = int(input("Введите второе число: "))
 
-max_number_1 = number_1
-min_number_1 = number_2
-
 if number_1 > number_2:
     max_number_1 = number_1
     min_number_1 = number_2
-elif number_1 < number_2:
+else:
     max_number_1 = number_2
     min_number_1 = number_1
 

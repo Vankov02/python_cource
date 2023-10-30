@@ -4,17 +4,17 @@ entrances_count = int(input("Введите количество подъезд�
 floors_count = int(input("Введите количество этажей в доме: "))
 flat_number = int(input("Введите номер искомой квартиры: "))
 
-number_of_apartments_per_floor = 4
+apartments_per_floor_amount = 4
 
-if flat_number > floors_count * entrances_count * number_of_apartments_per_floor:
+if (flat_number > floors_count * entrances_count * apartments_per_floor_amount) or (flat_number < 1):
     print("Такой квартиры нет в данном доме!")
 else:
-    entrance_number = math.ceil(flat_number / (floors_count * number_of_apartments_per_floor))
+    entrance_number = math.ceil(flat_number / (floors_count * apartments_per_floor_amount))
 
-    floor_number = ((flat_number - floors_count * number_of_apartments_per_floor * (entrance_number - 1) - 1)
-                    // number_of_apartments_per_floor + 1)
+    floor_number = ((flat_number - floors_count * apartments_per_floor_amount * (entrance_number - 1) - 1)
+                    // apartments_per_floor_amount + 1)
 
-    apartment_location = flat_number % number_of_apartments_per_floor
+    apartment_location = flat_number % apartments_per_floor_amount
 
     if apartment_location == 0:
         apartment_position = "Ближняя справа"
