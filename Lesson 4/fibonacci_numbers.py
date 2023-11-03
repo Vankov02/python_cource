@@ -1,11 +1,18 @@
-f_minus_2 = 0
-f_minus_1 = 1
-number = int(input("Введите номер искомого элемента Фибоначчи: "))
+fibonacci_number_element = int(input("Введите номер искомого элемента Фибоначчи: "))
+
 fibonacci_number = 0
 
-for i in range(2, number + 1):
-    fibonacci_number = f_minus_2 + f_minus_1
-    f_minus_2 = f_minus_1
-    f_minus_1 = fibonacci_number
+if fibonacci_number_element == 0:
+    fibonacci_number = 0
+elif fibonacci_number_element == 1:
+    fibonacci_number = 1
+else:
+    pre_previous_element = 0
+    previous_element = 1
 
-print(f"Число Фибоначчи под номером {number} = {fibonacci_number}")
+    for i in range(2, fibonacci_number_element + 1):
+        fibonacci_number = pre_previous_element + previous_element
+        pre_previous_element = previous_element
+        previous_element = fibonacci_number
+
+print(f"Число Фибоначчи под номером {fibonacci_number_element} = {fibonacci_number}")
