@@ -1,14 +1,16 @@
 age = int(input("Введите ваш возраст: "))
-age_per_100_multiple = age % 100
-age_per_10_multiple = age % 10
 
 if age > 112:
     print("Вы слишком стары!")
 elif age < 1:
     print("Вы слишком молоды!")
-elif 10 <= age_per_100_multiple < 15 or age_per_10_multiple == 0 or 4 < age_per_10_multiple <= 9:
-    print(f"Вам {age} лет!")
-elif age % 10 == 1:
-    print(f"Вам {age} год!")
 else:
-    print(f"Вам {age} года!")
+    age_last_two_digits = age % 100
+    age_last_digit = age % 10
+    
+    if age_last_two_digits in [10, 11, 12, 13, 14] or age_last_digit in [0, 5, 6, 7, 8, 9]:
+        print(f"Вам {age} лет!")
+    elif age_last_digit == 1:
+        print(f"Вам {age} год!")
+    else:
+        print(f"Вам {age} года!")
