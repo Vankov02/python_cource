@@ -22,4 +22,5 @@ else:
     else:
         result_1 = (-b + math.sqrt(discriminant)) / (2 * a)
         result_2 = (-b - math.sqrt(discriminant)) / (2 * a)
+
         print(f"Решение данного уравнения: x_1 = {result_1:.3f}, x_2 = {result_2:.3f}")
